@@ -3,7 +3,7 @@ Extraia o arquivo da pasta resource para uma pasta a sua escolha
 
 ```bash
 tar -xzf kafka_2.12-2.3.0.tgz
-cd kafka_2.12-2.3.0</code>
+cd kafka_2.12-2.3.0
 ```
 
 ### Iniciando o zookeeper necessário para o servidor kafka
