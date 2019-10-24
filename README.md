@@ -7,10 +7,14 @@ cd kafka_2.12-2.3.0
 ```
 
 ### Iniciando o zookeeper necessário para o servidor kafka
-<code>bin/zookeeper-server-start.sh config/zookeeper.properties</code>
+```bash
+bin/zookeeper-server-start.sh config/zookeeper.properties
+```
 
 ### Iniciando o servidor Kafka
-<code>bin/kafka-server-start.sh config/server.properties</code>
+```bash
+bin/kafka-server-start.sh config/server.properties
+```
 
 Pronto o servidor do kafka está rodando na sua máquina local.
 

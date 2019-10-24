@@ -6,7 +6,7 @@ import java.util.Properties;
 
 public class Publish {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Properties props = new Properties();
         props.put("bootstrap.servers", "localhost:9092");
         props.put("acks", "all");
@@ -14,8 +14,15 @@ public class Publish {
         props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 
         Producer<String, String> producer = new KafkaProducer<>(props);
-        for (int i = 0; i < 100; i++)
-            producer.send(new ProducerRecord<String, String>("my-topic", Integer.toString(i), Integer.toString(i)));
+        producer.send(new ProducerRecord<String, String>("canalDeMensagensOrgaosPublicos", "Defesa Cívil", "Aviso de tempestade"));
+        Thread.sleep(3000);
+        producer.send(new ProducerRecord<String, String>("canalDeMensagensOrgaosPublicos", "Corpo de bombeiros", "Arvore caida na SC-401"));
+        Thread.sleep(3000);
+        producer.send(new ProducerRecord<String, String>("canalDeMensagensOrgaosPublicos", "Polícia", "Assalto no centro"));
+        Thread.sleep(3000);
+        producer.send(new ProducerRecord<String, String>("canalDeMensagensOrgaosPublicos", "ANVISA", "Contaminação nos peixes no sul da ilha"));
+        Thread.sleep(3000);
+        producer.send(new ProducerRecord<String, String>("canalDeMensagemPublico", "João da Silva", "Cano de agua estourado na rua Rio Branco"));
         producer.close();
     }
 }
